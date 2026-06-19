@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Opening Social Battery...</title>
+</head>
+<body>
+  <p>Opening Social Battery...</p>
+  <script>
+    var code = new URLSearchParams(window.location.search).get('code');
+    if (code) {
+      window.location = 'socialbattery://add/' + code;
+    }
+  </script>
+</body>
+</html>
