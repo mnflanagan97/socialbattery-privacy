@@ -1,8 +1,0 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.mnflanagan97.socialbattery",
-    "sha256_cert_fingerprints": ["D1:FD:3E:C1:0E:86:FF:94:28:54:73:0E:8A:1B:1A:8A:6A:4E:03:C0:21:31:18:36:63:16:D9:D3:72:A7:09:E4"]
-  }
-}]
