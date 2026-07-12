@@ -84,6 +84,26 @@
   .glyph { width: 26px; text-align: center; font-size: 22px; line-height: 1; }
   .free-note { margin-top: 18px; color: var(--gray); font-size: 14px; }
 
+  /* ---------- WHO IT'S FOR ---------- */
+  .who { padding: 60px 0; text-align: center; }
+  .who h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 10px; }
+  .who .sub { color: var(--gray); max-width: 620px; margin: 0 auto 40px; font-size: 16px; }
+  .who-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    text-align: left;
+  }
+  .who-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 24px 22px;
+  }
+  .who-card .emoji { font-size: 30px; margin-bottom: 12px; }
+  .who-card h3 { margin: 0 0 8px; font-size: 18px; }
+  .who-card p { margin: 0; color: var(--gray); font-size: 15px; line-height: 1.55; }
+
   /* ---------- SCREENSHOTS ---------- */
   .shots-section { padding: 60px 0; text-align: center; }
   .shots-section h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 40px; }
@@ -170,6 +190,17 @@
   .vibe-card.mid .pct { color: var(--yellow); }
   .vibe-card.high .pct { color: var(--green); }
   .vibe-card p { margin: 0; color: #e6e9f5; font-size: 15px; font-style: italic; }
+  .vibe-card .tag {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 12px;
+    font-style: normal;
+    color: var(--navy);
+    background: var(--teal);
+    padding: 3px 10px;
+    border-radius: 100px;
+    font-weight: 700;
+  }
 
   /* ---------- FINAL CTA ---------- */
   .final-cta { padding: 70px 0 60px; text-align: center; }
@@ -214,6 +245,30 @@
     </div>
   </section>
 
+  <section class="who">
+    <div class="wrap">
+      <h2>Built for your people</h2>
+      <p class="sub">For the friend group and the family group chat that are half party-starters, half hiding-in-the-bathroom — and everyone already knows which is which.</p>
+      <div class="who-cards">
+        <div class="who-card">
+          <div class="emoji">👯</div>
+          <h3>The mixed friend group</h3>
+          <p>Some of you are down for anything, some of you need 45 minutes' notice and a nap after. Social Battery turns that mismatch into a running joke everyone can have fun laughing at.</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">🏡</div>
+          <h3>Family who gets it</h3>
+          <p>Holidays, Sunday dinners, the family group text — now everyone can see who's actually got another hour left before anyone has to ask.</p>
+        </div>
+        <div class="who-card">
+          <div class="emoji">😂</div>
+          <h3>People who already say it</h3>
+          <p>If you've ever said "my social battery is low" out loud and meant it, this just gives that feeling a number, a color, and a punchline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="shots-section">
     <div class="wrap">
       <h2>See it in action</h2>
@@ -253,6 +308,7 @@
       <h2>What you can do</h2>
       <div class="feature-grid">
         <div class="feature"><strong>140 playful status messages</strong> — one for every battery level, from "dead" to "full power."</div>
+        <div class="feature"><strong>Write your own</strong> — not feeling any of the 140? Add your own custom message for any battery level and make the joke yours.</div>
         <div class="feature"><strong>No account required</strong> — add friends with a simple invite code.</div>
         <div class="feature"><strong>Live friend feed</strong> — see everyone's latest energy level at a glance.</div>
         <div class="feature"><strong>Custom nicknames</strong> — make the feed feel personal, just for you.</div>
@@ -267,7 +323,7 @@
   <section class="vibes">
     <div class="wrap">
       <h2>Set your vibe</h2>
-      <p class="sub">A sample of the 140 status messages waiting inside the app.</p>
+      <p class="sub">140 built-in status messages, or write your own — like this one.</p>
       <div class="vibe-cards">
         <div class="vibe-card low">
           <div class="pct">14% · Critical</div>
@@ -278,8 +334,9 @@
           <p>"I can handle a meeting, but I'll need a nap after."</p>
         </div>
         <div class="vibe-card high">
-          <div class="pct">92% · Full Power</div>
-          <p>"Social butterfly mode: ACTIVATED. You're welcome."</p>
+          <div class="pct">92% · Charged</div>
+          <p>"Fully charged — for my 3 favorite people. Everyone else still gets the away message."</p>
+          <span class="tag">✍️ Custom message</span>
         </div>
       </div>
     </div>
