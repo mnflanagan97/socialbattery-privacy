@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Social Battery — How charged are you today?</title>
+<meta name="description" content="Social Battery lets you check in with yourself and your friends using one simple idea: your social battery level. Free on iPhone and Android.">
+
+<meta property="og:title" content="Social Battery — How charged are you today?">
+<meta property="og:description" content="Set your social battery from 0% to 100%, pick a funny status, and share your vibe with friends. Free on iPhone and Android.">
+<meta property="og:image" content="assets/og-image.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+
+<style>
+  :root {
+    --navy: #0e1630;
+    --navy2: #141e40;
+    --teal: #3ac8c3;
+    --gray: #aab2c8;
+    --red: #e6423c;
+    --yellow: #f5c528;
+    --green: #3cc864;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--navy);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #fff;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+
+  /* ---------- HERO ---------- */
+  .hero {
+    background: linear-gradient(180deg, var(--navy) 0%, var(--navy2) 100%);
+    padding: 56px 0 64px;
+    text-align: center;
+  }
+  .icon {
+    width: 104px;
+    height: 104px;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    margin-bottom: 20px;
+  }
+  h1 {
+    font-size: clamp(32px, 6vw, 52px);
+    margin: 0 0 10px;
+    line-height: 1.1;
+  }
+  h1 span { color: var(--teal); }
+  .tagline {
+    color: var(--gray);
+    font-size: clamp(16px, 2.4vw, 20px);
+    max-width: 560px;
+    margin: 0 auto 32px;
+  }
+  .badges {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  a.badge {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-radius: 14px;
+    background: #000;
+    border: 1px solid #444;
+    text-decoration: none;
+    color: #fff;
+    min-width: 220px;
+    transition: transform 0.15s ease, border-color 0.15s ease;
+  }
+  a.badge:hover { transform: translateY(-2px); border-color: var(--teal); }
+  a.badge .lines { display: flex; flex-direction: column; text-align: left; }
+  a.badge .top { font-size: 12px; color: #ddd; }
+  a.badge .bottom { font-size: 19px; font-weight: 700; }
+  .glyph { width: 26px; text-align: center; font-size: 22px; line-height: 1; }
+  .free-note { margin-top: 18px; color: var(--gray); font-size: 14px; }
+
+  /* ---------- SCREENSHOTS ---------- */
+  .shots-section { padding: 60px 0; text-align: center; }
+  .shots-section h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 40px; }
+  .shots {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+  .shots img {
+    width: 220px;
+    border-radius: 26px;
+    border: 3px solid var(--teal);
+    box-shadow: 0 14px 34px rgba(0,0,0,0.4);
+  }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how { background: var(--navy2); padding: 60px 0; }
+  .how h2 { text-align: center; font-size: clamp(24px, 4vw, 34px); margin-bottom: 40px; }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+  }
+  .step {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 26px 22px;
+  }
+  .step .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--teal);
+    color: var(--navy);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+  .step h3 { margin: 0 0 8px; font-size: 18px; }
+  .step p { margin: 0; color: var(--gray); font-size: 15px; line-height: 1.5; }
+
+  /* ---------- FEATURES ---------- */
+  .features { padding: 60px 0; }
+  .features h2 { text-align: center; font-size: clamp(24px, 4vw, 34px); margin-bottom: 40px; }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
+  .feature {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 20px 22px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #dfe3f0;
+  }
+  .feature strong { color: #fff; }
+
+  /* ---------- VIBES ---------- */
+  .vibes { background: var(--navy2); padding: 60px 0; text-align: center; }
+  .vibes h2 { font-size: clamp(24px, 4vw, 34px); margin-bottom: 10px; }
+  .vibes .sub { color: var(--gray); margin-bottom: 40px; }
+  .vibe-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    text-align: left;
+  }
+  .vibe-card {
+    border-radius: 16px;
+    padding: 20px;
+    background: rgba(255,255,255,0.05);
+    border-top: 4px solid var(--red);
+  }
+  .vibe-card.mid { border-top-color: var(--yellow); }
+  .vibe-card.high { border-top-color: var(--green); }
+  .vibe-card .pct { font-weight: 700; font-size: 20px; margin-bottom: 8px; }
+  .vibe-card.low .pct { color: var(--red); }
+  .vibe-card.mid .pct { color: var(--yellow); }
+  .vibe-card.high .pct { color: var(--green); }
+  .vibe-card p { margin: 0; color: #e6e9f5; font-size: 15px; font-style: italic; }
+
+  /* ---------- FINAL CTA ---------- */
+  .final-cta { padding: 70px 0 60px; text-align: center; }
+  .final-cta h2 { font-size: clamp(26px, 4.5vw, 38px); margin-bottom: 14px; }
+  .final-cta p { color: var(--gray); margin-bottom: 32px; }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    padding: 30px 0 50px;
+    text-align: center;
+    color: #6b7391;
+    font-size: 13px;
+  }
+  footer a { color: #8d94b3; text-decoration: underline; margin: 0 8px; }
+</style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="wrap">
+      <img class="icon" src="assets/icon.png" alt="Social Battery app icon">
+      <h1>Social <span>Battery</span></h1>
+      <p class="tagline">How charged are you today? Set your vibe, check your friends, and stop overexplaining how you feel.</p>
+
+      <div class="badges">
+        <a class="badge" href="https://apps.apple.com/us/app/social-battery-vibe-check/id6782723117">
+          <span class="glyph">&#63743;</span>
+          <span class="lines">
+            <span class="top">Download on the</span>
+            <span class="bottom">App Store</span>
+          </span>
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.mnflanagan97.socialbattery">
+          <span class="glyph">&#9654;</span>
+          <span class="lines">
+            <span class="top">GET IT ON</span>
+            <span class="bottom">Google Play</span>
+          </span>
+        </a>
+      </div>
+      <p class="free-note">Free to download · iPhone &amp; Android</p>
+    </div>
+  </section>
+
+  <section class="shots-section">
+    <div class="wrap">
+      <h2>See it in action</h2>
+      <div class="shots">
+        <img src="assets/shot1.png" alt="Social Battery friends feed screenshot">
+        <img src="assets/shot2.png" alt="Social Battery status screenshot">
+        <img src="assets/shot3.png" alt="Social Battery battery level screenshot">
+      </div>
+    </div>
+  </section>
+
+  <section class="how">
+    <div class="wrap">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Set your level</h3>
+          <p>Tap an emoji or slide to pick your battery from 0% to 100%.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Get your vibe</h3>
+          <p>Every level comes with a fun, honest status message — 140 to choose from.</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Share it</h3>
+          <p>Push your status to friends or a whole group with one tap. No long texts required.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="wrap">
+      <h2>What you can do</h2>
+      <div class="feature-grid">
+        <div class="feature"><strong>140 playful status messages</strong> — one for every battery level, from "dead" to "full power."</div>
+        <div class="feature"><strong>No account required</strong> — add friends with a simple invite code.</div>
+        <div class="feature"><strong>Live friend feed</strong> — see everyone's latest energy level at a glance.</div>
+        <div class="feature"><strong>Custom nicknames</strong> — make the feed feel personal, just for you.</div>
+        <div class="feature"><strong>Silent mode</strong> — mute notifications from specific friends without them knowing.</div>
+        <div class="feature"><strong>Groups</strong> — organize friends into work, family, besties, and more.</div>
+        <div class="feature"><strong>History &amp; charts</strong> — track your own battery trends over time.</div>
+        <div class="feature"><strong>Share anywhere</strong> — export your status to WhatsApp, iMessage, Instagram, and more.</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="vibes">
+    <div class="wrap">
+      <h2>Set your vibe</h2>
+      <p class="sub">A sample of the 140 status messages waiting inside the app.</p>
+      <div class="vibe-cards">
+        <div class="vibe-card low">
+          <div class="pct">14% · Critical</div>
+          <p>"One zoom call away from a complete system shutdown."</p>
+        </div>
+        <div class="vibe-card mid">
+          <div class="pct">50% · Neutral</div>
+          <p>"I can handle a meeting, but I'll need a nap after."</p>
+        </div>
+        <div class="vibe-card high">
+          <div class="pct">92% · Full Power</div>
+          <p>"Social butterfly mode: ACTIVATED. You're welcome."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <h2>Stop overexplaining. Start sharing your charge.</h2>
+      <p>Free on iPhone and Android — set your vibe in under a minute.</p>
+      <div class="badges">
+        <a class="badge" href="https://apps.apple.com/us/app/social-battery-vibe-check/id6782723117">
+          <span class="glyph">&#63743;</span>
+          <span class="lines">
+            <span class="top">Download on the</span>
+            <span class="bottom">App Store</span>
+          </span>
+        </a>
+        <a class="badge" href="https://play.google.com/store/apps/details?id=com.mnflanagan97.socialbattery">
+          <span class="glyph">&#9654;</span>
+          <span class="lines">
+            <span class="top">GET IT ON</span>
+            <span class="bottom">Google Play</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      &copy; 2026 Social Battery ·
+      <a href="privacy-policy.html">Privacy Policy</a> ·
+      <a href="child-safety.html">Child Safety</a>
+    </div>
+  </footer>
+
+</body>
+</html>
