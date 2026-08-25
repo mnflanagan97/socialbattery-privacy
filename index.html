@@ -61,27 +61,20 @@
   .badges {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 16px;
     flex-wrap: wrap;
   }
+  /* Official store badges. Both artworks fill their own canvas edge-to-edge,
+     so matching height is what lines them up; widths differ by design
+     (Apple 2.99:1, Google 3.37:1). */
   a.badge {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
-    border-radius: 14px;
-    background: #000;
-    border: 1px solid #444;
+    display: inline-flex;
     text-decoration: none;
-    color: #fff;
-    min-width: 220px;
-    transition: transform 0.15s ease, border-color 0.15s ease;
+    transition: transform 0.15s ease;
   }
-  a.badge:hover { transform: translateY(-2px); border-color: var(--teal); }
-  a.badge .lines { display: flex; flex-direction: column; text-align: left; }
-  a.badge .top { font-size: 12px; color: #ddd; }
-  a.badge .bottom { font-size: 19px; font-weight: 700; }
-  .glyph { width: 26px; text-align: center; font-size: 22px; line-height: 1; }
+  a.badge:hover { transform: translateY(-2px); }
+  a.badge img { height: 52px; width: auto; display: block; }
   .free-note { margin-top: 18px; color: var(--gray); font-size: 14px; }
 
   /* ---------- WHO IT'S FOR ---------- */
@@ -227,18 +220,10 @@
 
       <div class="badges">
         <a class="badge" href="https://apps.apple.com/us/app/social-battery-vibe-check/id6782723117">
-          <span class="glyph">&#63743;</span>
-          <span class="lines">
-            <span class="top">Download on the</span>
-            <span class="bottom">App Store</span>
-          </span>
+          <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="156" height="52">
         </a>
         <a class="badge" href="https://play.google.com/store/apps/details?id=com.mnflanagan97.socialbattery">
-          <span class="glyph">&#9654;</span>
-          <span class="lines">
-            <span class="top">GET IT ON</span>
-            <span class="bottom">Google Play</span>
-          </span>
+          <img src="assets/google-play-badge.svg" alt="Get it on Google Play" width="175" height="52">
         </a>
       </div>
       <p class="free-note">Free to download · iPhone &amp; Android</p>
@@ -350,18 +335,10 @@
       <p>Free on iPhone and Android — set your vibe in under a minute.</p>
       <div class="badges">
         <a class="badge" href="https://apps.apple.com/us/app/social-battery-vibe-check/id6782723117">
-          <span class="glyph">&#63743;</span>
-          <span class="lines">
-            <span class="top">Download on the</span>
-            <span class="bottom">App Store</span>
-          </span>
+          <img src="assets/app-store-badge.svg" alt="Download on the App Store" width="156" height="52">
         </a>
         <a class="badge" href="https://play.google.com/store/apps/details?id=com.mnflanagan97.socialbattery">
-          <span class="glyph">&#9654;</span>
-          <span class="lines">
-            <span class="top">GET IT ON</span>
-            <span class="bottom">Google Play</span>
-          </span>
+          <img src="assets/google-play-badge.svg" alt="Get it on Google Play" width="175" height="52">
         </a>
       </div>
     </div>
